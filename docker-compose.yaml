@@ -1,0 +1,46 @@
+version: '3.7'
+
+services:
+  db:
+    container_name: postgres
+    image: postgres:15.2
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - twitch-clone-backend
+  redis:
+    container_name: redis
+    image: redis:7.0
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+    networks:
+      twitch-clone-backend:
+  redis-insight:
+    container_name: redis-insight
+    image: redis/redisinsight:2.64
+    restart: always
+    ports:
+      - "5540:5540"
+    volumes:
+      - redisinsight:/data
+    networks:
+      twitch-clone-backend:
+
+
+volumes:
+  postgres_data:
+  redis_data:
+  redisinsight:
+
+networks:
+  twitch-clone-backend:
