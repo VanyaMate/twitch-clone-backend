@@ -992,6 +992,8 @@ export namespace Prisma {
     displayName: string | null
     avatar: string | null
     bio: string | null
+    isVerified: boolean | null
+    isEmailVerified: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -1004,6 +1006,8 @@ export namespace Prisma {
     displayName: string | null
     avatar: string | null
     bio: string | null
+    isVerified: boolean | null
+    isEmailVerified: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -1016,6 +1020,8 @@ export namespace Prisma {
     displayName: number
     avatar: number
     bio: number
+    isVerified: number
+    isEmailVerified: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -1030,6 +1036,8 @@ export namespace Prisma {
     displayName?: true
     avatar?: true
     bio?: true
+    isVerified?: true
+    isEmailVerified?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -1042,6 +1050,8 @@ export namespace Prisma {
     displayName?: true
     avatar?: true
     bio?: true
+    isVerified?: true
+    isEmailVerified?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -1054,6 +1064,8 @@ export namespace Prisma {
     displayName?: true
     avatar?: true
     bio?: true
+    isVerified?: true
+    isEmailVerified?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -1139,6 +1151,8 @@ export namespace Prisma {
     displayName: string
     avatar: string | null
     bio: string | null
+    isVerified: boolean
+    isEmailVerified: boolean
     createdAt: Date
     updatedAt: Date
     _count: UserCountAggregateOutputType | null
@@ -1168,6 +1182,8 @@ export namespace Prisma {
     displayName?: boolean
     avatar?: boolean
     bio?: boolean
+    isVerified?: boolean
+    isEmailVerified?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     tokens?: boolean | User$tokensArgs<ExtArgs>
@@ -1182,6 +1198,8 @@ export namespace Prisma {
     displayName?: boolean
     avatar?: boolean
     bio?: boolean
+    isVerified?: boolean
+    isEmailVerified?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["user"]>
@@ -1194,6 +1212,8 @@ export namespace Prisma {
     displayName?: boolean
     avatar?: boolean
     bio?: boolean
+    isVerified?: boolean
+    isEmailVerified?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
@@ -1217,6 +1237,8 @@ export namespace Prisma {
       displayName: string
       avatar: string | null
       bio: string | null
+      isVerified: boolean
+      isEmailVerified: boolean
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["user"]>
@@ -1620,6 +1642,8 @@ export namespace Prisma {
     readonly displayName: FieldRef<"User", 'String'>
     readonly avatar: FieldRef<"User", 'String'>
     readonly bio: FieldRef<"User", 'String'>
+    readonly isVerified: FieldRef<"User", 'Boolean'>
+    readonly isEmailVerified: FieldRef<"User", 'Boolean'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
   }
@@ -1985,9 +2009,9 @@ export namespace Prisma {
     token: string | null
     type: $Enums.TokenType | null
     expiresIn: Date | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    userId: string | null
   }
 
   export type TokenMaxAggregateOutputType = {
@@ -1995,9 +2019,9 @@ export namespace Prisma {
     token: string | null
     type: $Enums.TokenType | null
     expiresIn: Date | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    userId: string | null
   }
 
   export type TokenCountAggregateOutputType = {
@@ -2005,9 +2029,9 @@ export namespace Prisma {
     token: number
     type: number
     expiresIn: number
+    userId: number
     createdAt: number
     updatedAt: number
-    userId: number
     _all: number
   }
 
@@ -2017,9 +2041,9 @@ export namespace Prisma {
     token?: true
     type?: true
     expiresIn?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
-    userId?: true
   }
 
   export type TokenMaxAggregateInputType = {
@@ -2027,9 +2051,9 @@ export namespace Prisma {
     token?: true
     type?: true
     expiresIn?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
-    userId?: true
   }
 
   export type TokenCountAggregateInputType = {
@@ -2037,9 +2061,9 @@ export namespace Prisma {
     token?: true
     type?: true
     expiresIn?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
-    userId?: true
     _all?: true
   }
 
@@ -2120,9 +2144,9 @@ export namespace Prisma {
     token: string
     type: $Enums.TokenType
     expiresIn: Date
+    userId: string
     createdAt: Date
     updatedAt: Date
-    userId: string
     _count: TokenCountAggregateOutputType | null
     _min: TokenMinAggregateOutputType | null
     _max: TokenMaxAggregateOutputType | null
@@ -2147,9 +2171,9 @@ export namespace Prisma {
     token?: boolean
     type?: boolean
     expiresIn?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["token"]>
 
@@ -2158,9 +2182,9 @@ export namespace Prisma {
     token?: boolean
     type?: boolean
     expiresIn?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["token"]>
 
@@ -2169,9 +2193,9 @@ export namespace Prisma {
     token?: boolean
     type?: boolean
     expiresIn?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    userId?: boolean
   }
 
   export type TokenInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2191,9 +2215,9 @@ export namespace Prisma {
       token: string
       type: $Enums.TokenType
       expiresIn: Date
+      userId: string
       createdAt: Date
       updatedAt: Date
-      userId: string
     }, ExtArgs["result"]["token"]>
     composites: {}
   }
@@ -2592,9 +2616,9 @@ export namespace Prisma {
     readonly token: FieldRef<"Token", 'String'>
     readonly type: FieldRef<"Token", 'TokenType'>
     readonly expiresIn: FieldRef<"Token", 'DateTime'>
+    readonly userId: FieldRef<"Token", 'String'>
     readonly createdAt: FieldRef<"Token", 'DateTime'>
     readonly updatedAt: FieldRef<"Token", 'DateTime'>
-    readonly userId: FieldRef<"Token", 'String'>
   }
     
 
@@ -2949,6 +2973,8 @@ export namespace Prisma {
     displayName: 'displayName',
     avatar: 'avatar',
     bio: 'bio',
+    isVerified: 'isVerified',
+    isEmailVerified: 'isEmailVerified',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -2961,9 +2987,9 @@ export namespace Prisma {
     token: 'token',
     type: 'type',
     expiresIn: 'expiresIn',
+    userId: 'userId',
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-    userId: 'userId'
+    updatedAt: 'updatedAt'
   };
 
   export type TokenScalarFieldEnum = (typeof TokenScalarFieldEnum)[keyof typeof TokenScalarFieldEnum]
@@ -3009,6 +3035,13 @@ export namespace Prisma {
    * Reference to a field of type 'String[]'
    */
   export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -3068,6 +3101,8 @@ export namespace Prisma {
     displayName?: StringFilter<"User"> | string
     avatar?: StringNullableFilter<"User"> | string | null
     bio?: StringNullableFilter<"User"> | string | null
+    isVerified?: BoolFilter<"User"> | boolean
+    isEmailVerified?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     tokens?: TokenListRelationFilter
@@ -3081,6 +3116,8 @@ export namespace Prisma {
     displayName?: SortOrder
     avatar?: SortOrderInput | SortOrder
     bio?: SortOrderInput | SortOrder
+    isVerified?: SortOrder
+    isEmailVerified?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     tokens?: TokenOrderByRelationAggregateInput
@@ -3097,6 +3134,8 @@ export namespace Prisma {
     displayName?: StringFilter<"User"> | string
     avatar?: StringNullableFilter<"User"> | string | null
     bio?: StringNullableFilter<"User"> | string | null
+    isVerified?: BoolFilter<"User"> | boolean
+    isEmailVerified?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     tokens?: TokenListRelationFilter
@@ -3110,6 +3149,8 @@ export namespace Prisma {
     displayName?: SortOrder
     avatar?: SortOrderInput | SortOrder
     bio?: SortOrderInput | SortOrder
+    isVerified?: SortOrder
+    isEmailVerified?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: UserCountOrderByAggregateInput
@@ -3128,6 +3169,8 @@ export namespace Prisma {
     displayName?: StringWithAggregatesFilter<"User"> | string
     avatar?: StringNullableWithAggregatesFilter<"User"> | string | null
     bio?: StringNullableWithAggregatesFilter<"User"> | string | null
+    isVerified?: BoolWithAggregatesFilter<"User"> | boolean
+    isEmailVerified?: BoolWithAggregatesFilter<"User"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
   }
@@ -3140,9 +3183,9 @@ export namespace Prisma {
     token?: StringFilter<"Token"> | string
     type?: EnumTokenTypeFilter<"Token"> | $Enums.TokenType
     expiresIn?: DateTimeFilter<"Token"> | Date | string
+    userId?: StringFilter<"Token"> | string
     createdAt?: DateTimeFilter<"Token"> | Date | string
     updatedAt?: DateTimeFilter<"Token"> | Date | string
-    userId?: StringFilter<"Token"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
@@ -3151,9 +3194,9 @@ export namespace Prisma {
     token?: SortOrder
     type?: SortOrder
     expiresIn?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
     user?: UserOrderByWithRelationInput
   }
 
@@ -3165,9 +3208,9 @@ export namespace Prisma {
     NOT?: TokenWhereInput | TokenWhereInput[]
     type?: EnumTokenTypeFilter<"Token"> | $Enums.TokenType
     expiresIn?: DateTimeFilter<"Token"> | Date | string
+    userId?: StringFilter<"Token"> | string
     createdAt?: DateTimeFilter<"Token"> | Date | string
     updatedAt?: DateTimeFilter<"Token"> | Date | string
-    userId?: StringFilter<"Token"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id" | "token">
 
@@ -3176,9 +3219,9 @@ export namespace Prisma {
     token?: SortOrder
     type?: SortOrder
     expiresIn?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
     _count?: TokenCountOrderByAggregateInput
     _max?: TokenMaxOrderByAggregateInput
     _min?: TokenMinOrderByAggregateInput
@@ -3192,9 +3235,9 @@ export namespace Prisma {
     token?: StringWithAggregatesFilter<"Token"> | string
     type?: EnumTokenTypeWithAggregatesFilter<"Token"> | $Enums.TokenType
     expiresIn?: DateTimeWithAggregatesFilter<"Token"> | Date | string
+    userId?: StringWithAggregatesFilter<"Token"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Token"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Token"> | Date | string
-    userId?: StringWithAggregatesFilter<"Token"> | string
   }
 
   export type UserCreateInput = {
@@ -3205,6 +3248,8 @@ export namespace Prisma {
     displayName: string
     avatar?: string | null
     bio?: string | null
+    isVerified?: boolean
+    isEmailVerified?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     tokens?: TokenCreateNestedManyWithoutUserInput
@@ -3218,6 +3263,8 @@ export namespace Prisma {
     displayName: string
     avatar?: string | null
     bio?: string | null
+    isVerified?: boolean
+    isEmailVerified?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     tokens?: TokenUncheckedCreateNestedManyWithoutUserInput
@@ -3231,6 +3278,8 @@ export namespace Prisma {
     displayName?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    isEmailVerified?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tokens?: TokenUpdateManyWithoutUserNestedInput
@@ -3244,6 +3293,8 @@ export namespace Prisma {
     displayName?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    isEmailVerified?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tokens?: TokenUncheckedUpdateManyWithoutUserNestedInput
@@ -3257,6 +3308,8 @@ export namespace Prisma {
     displayName: string
     avatar?: string | null
     bio?: string | null
+    isVerified?: boolean
+    isEmailVerified?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -3269,6 +3322,8 @@ export namespace Prisma {
     displayName?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    isEmailVerified?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -3281,6 +3336,8 @@ export namespace Prisma {
     displayName?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    isEmailVerified?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -3300,9 +3357,9 @@ export namespace Prisma {
     token: string
     type: $Enums.TokenType
     expiresIn: Date | string
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    userId: string
   }
 
   export type TokenUpdateInput = {
@@ -3320,9 +3377,9 @@ export namespace Prisma {
     token?: StringFieldUpdateOperationsInput | string
     type?: EnumTokenTypeFieldUpdateOperationsInput | $Enums.TokenType
     expiresIn?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type TokenCreateManyInput = {
@@ -3330,9 +3387,9 @@ export namespace Prisma {
     token: string
     type: $Enums.TokenType
     expiresIn: Date | string
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    userId: string
   }
 
   export type TokenUpdateManyMutationInput = {
@@ -3349,9 +3406,9 @@ export namespace Prisma {
     token?: StringFieldUpdateOperationsInput | string
     type?: EnumTokenTypeFieldUpdateOperationsInput | $Enums.TokenType
     expiresIn?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -3382,6 +3439,11 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -3418,6 +3480,8 @@ export namespace Prisma {
     displayName?: SortOrder
     avatar?: SortOrder
     bio?: SortOrder
+    isVerified?: SortOrder
+    isEmailVerified?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -3430,6 +3494,8 @@ export namespace Prisma {
     displayName?: SortOrder
     avatar?: SortOrder
     bio?: SortOrder
+    isVerified?: SortOrder
+    isEmailVerified?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -3442,6 +3508,8 @@ export namespace Prisma {
     displayName?: SortOrder
     avatar?: SortOrder
     bio?: SortOrder
+    isVerified?: SortOrder
+    isEmailVerified?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -3482,6 +3550,14 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -3513,9 +3589,9 @@ export namespace Prisma {
     token?: SortOrder
     type?: SortOrder
     expiresIn?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
   }
 
   export type TokenMaxOrderByAggregateInput = {
@@ -3523,9 +3599,9 @@ export namespace Prisma {
     token?: SortOrder
     type?: SortOrder
     expiresIn?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
   }
 
   export type TokenMinOrderByAggregateInput = {
@@ -3533,9 +3609,9 @@ export namespace Prisma {
     token?: SortOrder
     type?: SortOrder
     expiresIn?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userId?: SortOrder
   }
 
   export type EnumTokenTypeWithAggregatesFilter<$PrismaModel = never> = {
@@ -3568,6 +3644,10 @@ export namespace Prisma {
 
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -3648,6 +3728,11 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -3713,6 +3798,14 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -3798,9 +3891,9 @@ export namespace Prisma {
     token?: StringFilter<"Token"> | string
     type?: EnumTokenTypeFilter<"Token"> | $Enums.TokenType
     expiresIn?: DateTimeFilter<"Token"> | Date | string
+    userId?: StringFilter<"Token"> | string
     createdAt?: DateTimeFilter<"Token"> | Date | string
     updatedAt?: DateTimeFilter<"Token"> | Date | string
-    userId?: StringFilter<"Token"> | string
   }
 
   export type UserCreateWithoutTokensInput = {
@@ -3811,6 +3904,8 @@ export namespace Prisma {
     displayName: string
     avatar?: string | null
     bio?: string | null
+    isVerified?: boolean
+    isEmailVerified?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -3823,6 +3918,8 @@ export namespace Prisma {
     displayName: string
     avatar?: string | null
     bio?: string | null
+    isVerified?: boolean
+    isEmailVerified?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -3851,6 +3948,8 @@ export namespace Prisma {
     displayName?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    isEmailVerified?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -3863,6 +3962,8 @@ export namespace Prisma {
     displayName?: StringFieldUpdateOperationsInput | string
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    isEmailVerified?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   db:
-    container_name: postgres
+    container_name: twitch-postgres
     image: postgres:15.2
     restart: always
     environment:
@@ -15,7 +15,7 @@ services:
     networks:
       - twitch-clone-backend
   redis:
-    container_name: redis
+    container_name: twitch-redis
     image: redis:7.0
     restart: always
     ports:
@@ -26,7 +26,7 @@ services:
     networks:
       twitch-clone-backend:
   redis-insight:
-    container_name: redis-insight
+    container_name: twitch-redis-insight
     image: redis/redisinsight:2.64
     restart: always
     ports:

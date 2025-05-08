@@ -125,6 +125,8 @@ exports.Prisma.UserScalarFieldEnum = {
   displayName: 'displayName',
   avatar: 'avatar',
   bio: 'bio',
+  isVerified: 'isVerified',
+  isEmailVerified: 'isEmailVerified',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -134,9 +136,9 @@ exports.Prisma.TokenScalarFieldEnum = {
   token: 'token',
   type: 'type',
   expiresIn: 'expiresIn',
+  userId: 'userId',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  userId: 'userId'
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {
